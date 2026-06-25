@@ -1,1 +1,0 @@
-Athletic background placeholder: add verified competition history after confirmation.
