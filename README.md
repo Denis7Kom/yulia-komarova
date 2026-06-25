@@ -4,7 +4,7 @@ Modern personal landing page for **Yulia Komarova** — concerts, backstage, spo
 
 ## Status
 
-Static prototype prepared for GitHub Pages deployment.
+Static GitHub Pages site. Current branch improves the first prototype into a more complete turnkey personal profile.
 
 ## Deployment
 
@@ -14,7 +14,7 @@ The repository contains a GitHub Actions workflow:
 .github/workflows/pages.yml
 ```
 
-After merging the PR into `main`, enable GitHub Pages:
+GitHub Pages should use:
 
 ```text
 Settings → Pages → Build and deployment → Source → GitHub Actions
@@ -34,17 +34,41 @@ https://denis7kom.github.io/yulia-komarova/
 - GitHub Pages
 - GitHub Actions
 
-## Current prototype features
+## Current site features
 
-- responsive one-page layout;
-- animated hero section;
-- canvas particle background;
+- Apple-style visual direction;
+- liquid glass interface;
+- responsive one-page landing;
+- canvas aurora background;
+- scroll progress bar;
 - scroll reveal effects;
 - animated counters;
-- custom cursor;
-- 3D hover card;
-- modern glass/neon visual style.
+- command palette with `Ctrl/⌘ + K`;
+- custom cursor glow;
+- magnetic buttons;
+- 3D tilt cards;
+- spotlight bento cards;
+- copyable content brief button;
+- favicon;
+- no frontend dependencies;
+- no backend and no database.
 
-## Notes
+## Content work
 
-This version is intentionally static: no backend, no database, no build step. It is suitable for fast publication and later incremental upgrades.
+Real personal data should be added after filling out:
+
+```text
+CONTENT_BRIEF.md
+```
+
+The current page intentionally avoids unverified achievements, years of experience, named artists or inflated numbers. Those should be added only after confirmation.
+
+## Suggested next upgrades
+
+- add real public photos in `assets/img`;
+- add Open Graph preview image;
+- add real cases / events section;
+- add Telegram / WhatsApp / email CTA;
+- add JSON-LD structured data;
+- add multilingual mode if needed;
+- add form endpoint if the site needs requests from clients.
