@@ -2,8 +2,6 @@ const root = document.documentElement;
 const progress = document.querySelector('.scroll-progress span');
 const cursor = document.querySelector('.cursor-glow');
 
-const briefText = `1. Кто она профессионально: организатор концертов, event manager, представитель агентства, продюсер, PR?\n2. Какие реальные проекты можно назвать: концерты, площадки, артисты, города, фестивали?\n3. Какие услуги она реально оказывает: организация под ключ, booking, backstage, PR, гости, партнёры?\n4. Какие контакты ставим: Instagram, Telegram, WhatsApp, email, сайт агентства?\n5. Нужен тон: премиально, дерзко, официально, творчески, минималистично?\n6. Какие фото можно использовать публично и какие нельзя?`;
-
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
@@ -116,23 +114,6 @@ window.addEventListener('keydown', (event) => {
   }
   if (event.key === 'Escape' && dialog?.open) dialog.close();
 });
-
-document.querySelector('[data-copy-brief]')?.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(briefText);
-    showToast('Вопросы скопированы');
-  } catch {
-    showToast('Скопируй вопросы из блока ниже');
-  }
-});
-
-function showToast(text) {
-  const toast = document.createElement('div');
-  toast.className = 'copied';
-  toast.textContent = text;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 1800);
-}
 
 const canvas = document.getElementById('auroraCanvas');
 const ctx = canvas?.getContext('2d');
