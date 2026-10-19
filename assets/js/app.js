@@ -5,6 +5,7 @@ const cursor = document.querySelector('.cursor-glow');
 const translations = {
   ru: {
     lang: 'ru',
+    skipLink: 'К содержанию',
     title: 'Yulia Komarova — Best Sound',
     description: 'Юлия Комарова — организатор концертов и представитель агентства Best Sound. Личная биографическая визитка на русском, английском и итальянском.',
     navAria: 'Основная навигация',
@@ -81,6 +82,7 @@ const translations = {
   },
   en: {
     lang: 'en',
+    skipLink: 'Skip to content',
     title: 'Yulia Komarova — Best Sound',
     description: 'Yulia Komarova is a concert organizer and Best Sound representative. A personal biographical profile in Russian, English and Italian.',
     navAria: 'Main navigation',
@@ -157,6 +159,7 @@ const translations = {
   },
   it: {
     lang: 'it',
+    skipLink: 'Vai al contenuto',
     title: 'Yulia Komarova — Best Sound',
     description: 'Yulia Komarova è organizzatrice di concerti e rappresentante di Best Sound. Un profilo biografico personale in russo, inglese e italiano.',
     navAria: 'Navigazione principale',
@@ -380,6 +383,9 @@ setInterval(() => {
 const dialog = document.querySelector('[data-command-dialog]');
 const commandOpen = document.querySelector('[data-command-open]');
 commandOpen?.addEventListener('click', () => dialog?.showModal());
+dialog?.querySelectorAll('a[href]').forEach((link) => {
+  link.addEventListener('click', () => { if (dialog.open) dialog.close(); });
+});
 window.addEventListener('keydown', (event) => {
   const isCommand = event.metaKey || event.ctrlKey;
   if (isCommand && event.key.toLowerCase() === 'k') {
