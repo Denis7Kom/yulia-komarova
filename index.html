@@ -1,67 +1,95 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#fff9fc">
+  <meta name="description" content="Юлия Комарова — организатор концертов и представитель агентства Best Sound.">
   <title>Yulia Komarova — Best Sound</title>
-  <meta name="description" content="Юлия Комарова — организатор концертов и представитель агентства Best Sound. Личная биографическая визитка на русском, английском и итальянском." />
-  <meta name="theme-color" content="#f5f2ea" />
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./assets/css/styles.css" />
-  <link rel="stylesheet" href="./assets/css/language.css" />
-  <link rel="stylesheet" href="./assets/css/profile.css" />
-  <link rel="stylesheet" href="./assets/css/fixes.css" />
-  <script src="./assets/js/app.js" defer></script>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/img/portrait.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="./assets/css/editorial.css">
+  <script defer src="./assets/js/app.js"></script>
 </head>
 <body>
-  <canvas class="aurora-canvas" id="auroraCanvas" aria-hidden="true"></canvas>
-  <div class="cursor-glow" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-  <nav class="topbar" aria-label="Основная навигация" data-i18n-attr="aria-label:navAria">
-    <a class="brand" href="#top" aria-label="Главная страница Yulia Komarova"><span class="brand-mark">YK</span><span><strong>Yulia Komarova</strong><small data-i18n="brandRole">Best Sound</small></span></a>
-    <div class="nav-links"><a href="#about" data-i18n="navProfile">Биография</a><a href="#agency">Best Sound</a><a href="#signature" data-i18n="navSignature">Подход</a><a href="#turnkey" data-i18n="navEvents">События</a></div>
-    <div class="language-switch" aria-label="Выбор языка" data-i18n-attr="aria-label:languageSelector"><button type="button" class="lang-btn active" data-lang-switch="ru">RU</button><button type="button" class="lang-btn" data-lang-switch="en">EN</button><button type="button" class="lang-btn" data-lang-switch="it">IT</button></div>
-    <button class="command-btn magnetic" type="button" data-command-open aria-label="Открыть меню" data-i18n="commandButton" data-i18n-attr="aria-label:commandLabel">Меню</button>
-  </nav>
+  <a class="skip-link" href="#about">К содержанию</a>
+  <header class="topbar" role="banner">
+    <a class="brand" href="#top" aria-label="Yulia Komarova — Best Sound">
+      <span class="brand-mark">YK<span class="brand-dot"></span></span>
+      <span class="brand-copy"><strong>Yulia Komarova</strong><small>Best Sound</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Основная навигация" data-i18n-attr="aria-label:navAria">
+      <a href="#about" data-i18n="navProfile">Биография</a>
+      <a href="#signature" data-i18n="navSignature">Подход</a>
+      <a href="#agency">Best Sound</a>
+      <a href="#turnkey" data-i18n="navEvents">События</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="language-switch" aria-label="Выбор языка" data-i18n-attr="aria-label:languageSelector">
+        <button class="lang-btn active" type="button" data-lang-switch="ru" aria-pressed="true">RU</button>
+        <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" type="button" data-lang-switch="it" aria-pressed="false">IT</button>
+      </div>
+      <button class="command-btn" data-command-open type="button" data-i18n="commandButton" data-i18n-attr="aria-label:commandLabel" aria-label="Открыть меню">Меню <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
 
   <main id="top">
-    <section class="hero section-shell">
+    <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span><b data-i18n="eyebrow">Концерты · Best Sound · Биография</b></p>
-        <h1 data-i18n-html="heroTitle">Юлия Комарова. <em>Сцена, организация, точность.</em></h1>
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="eyebrow">Концерты · Best Sound · Биография</span></div>
+        <h1 id="hero-title" data-i18n-html="heroTitle">Юлия Комарова. <em>Сцена, организация, точность.</em></h1>
         <p class="hero-lead" data-i18n="heroLead">Юлия Комарова — организатор концертов и представитель агентства Best Sound. Её работа связана с подготовкой концертных событий, где важны точная координация, спокойная коммуникация и внимание к деталям, которые зритель обычно не видит.</p>
-        <div class="hero-actions"><a class="btn primary magnetic" href="#turnkey" data-i18n="primaryCta">Организация мероприятия</a><a class="btn ghost magnetic" href="https://www.sound-agency.ru" target="_blank" rel="noopener">Best Sound</a><a class="btn ghost magnetic" href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener">Instagram</a></div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#turnkey"><span data-i18n="primaryCta">Организация мероприятия</span><span aria-hidden="true">↗</span></a>
+          <a class="btn subtle" href="#about"><span data-i18n="navProfile">Биография</span><span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note"><span class="hairline"></span> <span>Best Sound</span><span class="hero-note-point"></span><span>RU / EN / IT</span></div>
       </div>
-      <div class="hero-device reveal" data-tilt>
-        <div class="device-toolbar"><span></span><span></span><span></span></div>
-        <div class="live-card"><small data-i18n="systemLabel">БИОГРАФИЯ</small><h2 data-rotator>Концертная работа</h2><p data-i18n="flowText">Организация концертов · Best Sound · спортивная дисциплина · международный контекст.</p></div>
-        <div class="orbital orbital-one"></div><div class="orbital orbital-two"></div>
-        <div class="metric-grid"><article><b data-count="3">0</b><span data-i18n="metricLanguages">языка: RU, EN, IT</span></article><article><b data-count="2">0</b><span data-i18n="metricFields">сцена и спорт</span></article><article><b data-count="5">0</b><span data-i18n="metricProfile">топ-5 SwimCup 2024</span></article></div>
+      <div class="hero-visual reveal">
+        <div class="portrait-halo" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <img src="./assets/img/portrait.webp" width="1024" height="1536" alt="Юлия Комарова — портрет" fetchpriority="high" decoding="async">
+          <div class="portrait-overlay" aria-hidden="true"></div>
+          <div class="portrait-label"><span>YK / 01</span><strong>Yulia Komarova</strong></div>
+        </div>
+        <div class="float-chrome" aria-hidden="true"><span class="float-ring"></span><span class="float-caption">BEST SOUND</span></div>
       </div>
     </section>
 
-    <section class="section-shell intro reveal" id="about"><div class="section-kicker" data-i18n="aboutKicker">Биография</div><h2 data-i18n="aboutTitle">Биография в ритме сцены и спорта.</h2><p data-i18n="aboutText">Юлия работает в концертной индустрии как человек, для которого событие начинается задолго до выхода артиста на сцену. В её профессиональном фокусе — подготовка, координация, коммуникация с участниками процесса и контроль деталей, от которых зависит общее впечатление от мероприятия.</p></section>
+    <div class="section-shell separator-wrap" aria-hidden="true"><span></span><span class="separator-flower">✳</span><span></span></div>
 
-    <section class="section-shell signature reveal" id="signature"><div class="signature-head"><div><div class="section-kicker" data-i18n="signatureKicker">Почерк</div><h2 data-i18n="signatureTitle">Её профессиональный почерк.</h2></div><p data-i18n="signatureLead">Юлия не работает через громкость и случайность. Её стиль — спокойная собранность, быстрый контакт с людьми и точное внимание к тому, что должно сработать вовремя.</p></div><div class="signature-grid"><article><span>01</span><h3 data-i18n="signatureOneTitle">Спокойный контроль</h3><p data-i18n="signatureOneText">Она держит процесс без лишнего шума: задачи, люди, сроки и бэкстейдж остаются в рабочем ритме.</p></article><article><span>02</span><h3 data-i18n="signatureTwoTitle">Сценическое мышление</h3><p data-i18n="signatureTwoText">Для неё концерт — не набор действий, а цельная композиция, где важны путь гостя, состояние команды и финальное впечатление.</p></article><article><span>03</span><h3 data-i18n="signatureThreeTitle">Спортивная выдержка</h3><p data-i18n="signatureThreeText">Опыт соревнований дал ей дисциплину, устойчивость к давлению и привычку работать до результата.</p></article></div></section>
-
-    <section class="section-shell bento" id="agency" aria-label="Профессиональный контекст Yulia Komarova и Best Sound">
-      <article class="bento-card large reveal" data-spotlight><span class="tag" data-i18n="cardAgencyTag">01 / Best Sound</span><h3 data-i18n="cardAgencyTitle">Представитель агентства Best Sound</h3><p data-i18n="cardAgencyText">Юлия представляет профессиональную среду Best Sound — концертного агентства, связанного с гастрольными проектами и международными артистами. В её публичной визитке Best Sound выступает не декоративным логотипом, а частью профессиональной идентичности.</p></article>
-      <article class="bento-card reveal" data-spotlight><span class="tag" data-i18n="cardConcertsTag">02 / концерты</span><h3 data-i18n="cardConcertsTitle">Концертная работа</h3><p data-i18n="cardConcertsText">Её деятельность связана с организацией концертных событий, гастрольной логикой, работой с площадкой, командой и бэкстейдж-процессами.</p></article>
-      <article class="bento-card reveal" data-spotlight><span class="tag" data-i18n="cardProjectsTag">03 / проекты</span><h3 data-i18n="cardProjectsTitle">Международный контекст</h3><p data-i18n="cardProjectsText">В профессиональном контексте Best Sound представлены Alessandro Safina, Joe Lynn Turner и концертные направления по России и странам СНГ.</p></article>
-      <article class="bento-card wide reveal" data-spotlight><span class="tag" data-i18n="cardSportTag">04 / плавание</span><h3 data-i18n="cardSportTitle">Плавание и дисциплина</h3><p data-i18n="cardSportText">Юлия неоднократно участвовала в соревнованиях по плаванию в России и Италии, становилась призёром разных стартов, а в 2024 году выступила на международном SwimCup и вошла в топ-5. Спорт сформировал в ней выдержку, темп и способность работать на результат.</p></article>
+    <section class="story section-shell reveal" id="about" aria-labelledby="about-title">
+      <div class="story-heading"><div class="section-kicker"><span class="index">01 /</span> <span data-i18n="aboutKicker">Биография</span></div><h2 id="about-title" data-i18n="aboutTitle">Биография в ритме сцены и спорта.</h2></div>
+      <div class="story-text"><p data-i18n="aboutText">Юлия работает в концертной индустрии как человек, для которого событие начинается задолго до выхода артиста на сцену. В её профессиональном фокусе — подготовка, координация, коммуникация с участниками процесса и контроль деталей, от которых зависит общее впечатление от мероприятия.</p><div class="story-rule"><span>Best Sound</span><span>2026</span></div></div>
     </section>
 
-    <section class="section-shell quote-strip reveal"><p data-i18n="quoteText">Она соединяет две разные среды — сцену и спортивную дистанцию. В обеих важны концентрация, точное движение и способность дойти до финала без потери темпа.</p></section>
+    <section class="signature section-shell" id="signature" aria-labelledby="signature-title">
+      <div class="section-intro reveal"><div class="section-kicker"><span class="index">02 /</span> <span data-i18n="signatureKicker">Почерк</span></div><h2 id="signature-title" data-i18n="signatureTitle">Её профессиональный почерк.</h2><p data-i18n="signatureLead">Юлия не работает через громкость и случайность. Её стиль — спокойная собранность, быстрый контакт с людьми и точное внимание к тому, что должно сработать вовремя.</p></div>
+      <div class="signature-grid">
+        <article class="signature-card reveal"><span class="card-index">01</span><span class="card-symbol" aria-hidden="true">◌</span><h3 data-i18n="signatureOneTitle">Спокойный контроль</h3><p data-i18n="signatureOneText">Она держит процесс без лишнего шума: задачи, люди, сроки и бэкстейдж остаются в рабочем ритме.</p></article>
+        <article class="signature-card reveal"><span class="card-index">02</span><span class="card-symbol" aria-hidden="true">✦</span><h3 data-i18n="signatureTwoTitle">Сценическое мышление</h3><p data-i18n="signatureTwoText">Для неё концерт — не набор действий, а цельная композиция, где важны путь гостя, состояние команды и финальное впечатление.</p></article>
+        <article class="signature-card reveal"><span class="card-index">03</span><span class="card-symbol" aria-hidden="true">↗</span><h3 data-i18n="signatureThreeTitle">Спортивная выдержка</h3><p data-i18n="signatureThreeText">Опыт соревнований дал ей дисциплину, устойчивость к давлению и привычку работать до результата.</p></article>
+      </div>
+    </section>
 
-    <section class="section-shell turnkey" id="turnkey"><div class="section-head reveal"><div><div class="section-kicker" data-i18n="turnkeyKicker">Организация событий</div><h2 data-i18n="turnkeyTitle">Организация мероприятия</h2></div><p data-i18n="turnkeyText">В работе Юлии событие рассматривается как цельная система: идея, подготовка, команда, бэкстейдж, публика и финальное впечатление.</p></div><div class="service-rail"><article class="service-card reveal"><span>01</span><h3 data-i18n="serviceOneTitle">Концепция</h3><p data-i18n="serviceOneText">Формат, аудитория, настроение, масштаб и структура события.</p></article><article class="service-card reveal"><span>02</span><h3 data-i18n="serviceTwoTitle">Координация</h3><p data-i18n="serviceTwoText">Команда, тайминг, площадка, участники и последовательность действий.</p></article><article class="service-card reveal"><span>03</span><h3 data-i18n="serviceThreeTitle">Бэкстейдж</h3><p data-i18n="serviceThreeText">Невидимая часть мероприятия: коммуникация, контроль деталей и спокойное управление процессом.</p></article><article class="service-card reveal"><span>04</span><h3 data-i18n="serviceFourTitle">Результат</h3><p data-i18n="serviceFourText">Событие, которое воспринимается цельно: сцена, публика, атмосфера и профессиональный уровень.</p></article></div></section>
+    <section class="feature section-shell" id="agency" aria-labelledby="agency-title">
+      <div class="feature-media reveal"><img src="./assets/img/backstage.webp" width="960" height="1280" alt="Юлия Комарова за кулисами мероприятия" loading="lazy" decoding="async"><span class="photo-caption">BEST SOUND <span aria-hidden="true">↗</span></span></div>
+      <div class="feature-copy reveal"><div class="section-kicker"><span class="index">03 /</span> Best Sound</div><h2 id="agency-title" data-i18n="cardAgencyTitle">Представитель агентства Best Sound</h2><p data-i18n="cardConcertsText">Её деятельность связана с организацией концертных событий, гастрольной логикой, работой с площадкой, командой и бэкстейдж-процессами.</p><p class="feature-detail" data-i18n="cardProjectsText">В профессиональном контексте Best Sound представлены Alessandro Safina, Joe Lynn Turner и концертные направления по России и странам СНГ.</p><a class="text-link" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">Best Sound <span aria-hidden="true">↗</span></a></div>
+    </section>
 
-    <section class="section-shell timeline reveal"><div class="section-kicker" data-i18n="timelineKicker">Опоры профиля</div><h2 data-i18n="timelineTitle">Ключевые опоры профиля.</h2><div class="timeline-grid"><article><b data-i18n="timelineLabelOne">Best Sound</b><p data-i18n="timelineOne">Профессиональная среда концертного менеджмента и гастрольных проектов.</p></article><article><b data-i18n="timelineLabelTwo">Сцена</b><p data-i18n="timelineTwo">Работа с событиями, командой, площадкой и бэкстейдж-процессами.</p></article><article><b data-i18n="timelineLabelThree">SwimCup 2024</b><p data-i18n="timelineThree">Международный спортивный опыт и результат в топ-5.</p></article><article><b data-i18n="timelineLabelFour">RU · EN · IT</b><p data-i18n="timelineFour">Профиль, открытый для русскоязычной и международной аудитории.</p></article></div></section>
+    <section class="sport section-shell" aria-labelledby="sport-title">
+      <div class="sport-copy reveal"><div class="section-kicker"><span class="index">04 /</span> <span data-i18n="cardSportTag">Плавание</span></div><h2 id="sport-title" data-i18n="cardSportTitle">Плавание и дисциплина</h2><p data-i18n="cardSportText">Юлия неоднократно участвовала в соревнованиях по плаванию в России и Италии, становилась призёром разных стартов, а в 2024 году выступила на международном SwimCup и вошла в топ-5. Спорт сформировал в ней выдержку, темп и способность работать на результат.</p><div class="sport-stat"><span class="stat-number">TOP <b>5</b></span><span class="stat-caption">SwimCup 2024</span></div></div>
+      <div class="sport-media reveal"><img src="./assets/img/swimcup.webp" width="960" height="1280" alt="Юлия Комарова с наградой по плаванию" loading="lazy" decoding="async"><span class="sport-watermark">2024</span></div>
+    </section>
 
-    <section class="section-shell final-cta reveal"><p class="eyebrow"><span></span><b data-i18n="finalEyebrow">Личная биография</b></p><h2 data-i18n="finalTitle">Сцена, дисциплина и личный стиль — в одной профессиональной биографии.</h2><div class="hero-actions centered"><a class="btn primary magnetic" href="https://www.sound-agency.ru" target="_blank" rel="noopener">Best Sound</a><a class="btn ghost magnetic" href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener">Instagram</a></div></section>
+    <section class="process section-shell" id="turnkey" aria-labelledby="process-title"><div class="process-head reveal"><div class="section-kicker"><span class="index">05 /</span> <span data-i18n="turnkeyKicker">Организация событий</span></div><h2 id="process-title" data-i18n="turnkeyTitle">Организация мероприятия</h2><p data-i18n="turnkeyText">В работе Юлии событие рассматривается как цельная система: идея, подготовка, команда, бэкстейдж, публика и финальное впечатление.</p></div><div class="process-grid"><article class="process-card reveal"><span>01 <span aria-hidden="true">↗</span></span><h3 data-i18n="serviceOneTitle">Концепция</h3><p data-i18n="serviceOneText">Формат, аудитория, настроение, масштаб и структура события.</p></article><article class="process-card reveal"><span>02 <span aria-hidden="true">↗</span></span><h3 data-i18n="serviceTwoTitle">Координация</h3><p data-i18n="serviceTwoText">Команда, тайминг, площадка, участники и последовательность действий.</p></article><article class="process-card reveal"><span>03 <span aria-hidden="true">↗</span></span><h3 data-i18n="serviceThreeTitle">Бэкстейдж</h3><p data-i18n="serviceThreeText">Невидимая часть мероприятия: коммуникация, контроль деталей и спокойное управление процессом.</p></article><article class="process-card reveal"><span>04 <span aria-hidden="true">↗</span></span><h3 data-i18n="serviceFourTitle">Результат</h3><p data-i18n="serviceFourText">Событие, которое воспринимается цельно: сцена, публика, атмосфера и профессиональный уровень.</p></article></div></section>
+
+    <section class="final-cta section-shell reveal"><div class="closing-orb" aria-hidden="true"></div><div class="section-kicker" data-i18n="finalEyebrow">Личная биография</div><h2 data-i18n="finalTitle">Сцена, дисциплина и личный стиль — в одной профессиональной биографии.</h2><div class="hero-actions centered"><a class="btn primary" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">Best Sound <span aria-hidden="true">↗</span></a><a class="btn subtle" href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></div></section>
   </main>
-
-  <dialog class="command-dialog" data-command-dialog><form method="dialog"><div class="command-head"><strong data-i18n="dialogTitle">Быстрые действия</strong><button type="submit" aria-label="Закрыть" data-i18n-attr="aria-label:closeLabel">×</button></div><a href="#agency" data-i18n="dialogAgency">Профиль Best Sound</a><a href="#signature" data-i18n="dialogSignature">Профессиональный почерк</a><a href="#turnkey" data-i18n="dialogEvent">Организация мероприятия</a><a href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener">Instagram</a><a href="https://www.sound-agency.ru" target="_blank" rel="noopener">Best Sound</a></form></dialog>
-  <footer class="footer">© 2026 Yulia Komarova · Best Sound · концерты · RU / EN / IT</footer>
+  <footer class="footer section-shell"><a class="footer-brand" href="#top">Yulia Komarova <span>✳</span></a><span>© 2026 Yulia Komarova</span><span>Best Sound · RU / EN / IT</span></footer>
+  <dialog class="command-dialog" data-command-dialog><form method="dialog"><div class="command-head"><strong data-i18n="dialogTitle">Быстрые действия</strong><button type="submit" data-i18n-attr="aria-label:closeLabel" aria-label="Закрыть">×</button></div><a href="#about" data-i18n="navProfile">Биография</a><a href="#signature" data-i18n="navSignature">Подход</a><a href="#agency" data-i18n="dialogAgency">Профиль Best Sound</a><a href="#turnkey" data-i18n="dialogEvent">Организация мероприятия</a><a href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></form></dialog>
 </body>
 </html>
