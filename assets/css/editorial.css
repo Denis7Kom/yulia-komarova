@@ -231,13 +231,119 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 @media(max-width:390px){.artworks-grid{grid-template-columns:1fr}.artwork-image img,.artwork-image video{aspect-ratio:4/4.5}}
 
 
-/* Swimming video — restrained editorial companion to the SwimCup section */
-.swim-film{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,420px);align-items:center;gap:clamp(36px,7vw,150px);padding-top:105px;padding-bottom:120px;border-bottom:1px solid var(--line)}
-.swim-film-copy{min-width:0}
-.swim-film-copy h2{font-family:var(--serif);font-size:clamp(62px,7.2vw,112px);font-weight:400;line-height:1.04;letter-spacing:-.055em;margin:35px 0 24px;overflow-wrap:break-word}
-.swim-film-copy p{font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:var(--body);max-width:480px}
-.swim-film-visual{margin:0;min-width:0;width:100%;justify-self:end}
-.swim-film-visual video{display:block;width:100%;height:auto;aspect-ratio:480/704;object-fit:cover;background:#34312f;cursor:pointer}
-.swim-film-visual figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:16px;border-top:0;font-size:10px;letter-spacing:.12em;color:var(--quiet)}
-@media(max-width:900px){.swim-film{grid-template-columns:minmax(0,1fr) minmax(250px,40%);gap:36px;padding-top:85px;padding-bottom:90px}.swim-film-copy h2{font-size:clamp(50px,7vw,77px)}}
-@media(max-width:650px){.swim-film{display:flex;flex-direction:column;align-items:stretch;gap:34px;padding-top:65px;padding-bottom:80px}.swim-film-copy h2{font-size:clamp(54px,11vw,72px);margin:20px 0 15px}.swim-film-visual{max-width:480px;align-self:center}.swim-film-visual figcaption{padding-top:12px}}
+
+/* Swimming film — compact editorial two-column composition */
+.swim-film{
+  border-block:1px solid var(--line);
+  background:linear-gradient(117deg,#f1f0eb 0%,#eae6e0 65%,#e7dedb 100%);
+}
+.swim-film-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,360px);
+  align-items:center;
+  column-gap:clamp(45px,9vw,155px);
+  padding-block:clamp(72px,8vw,116px);
+}
+.swim-film-copy{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:38px;
+  min-width:0;
+  padding-block:12px;
+}
+.swim-film-copy .section-meta{font-size:10px;letter-spacing:.15em}
+.swim-film-message{min-width:0}
+.swim-film-copy h2{
+  margin:0 0 22px;
+  font-family:var(--serif);
+  font-size:clamp(60px,7.5vw,112px);
+  font-weight:400;
+  font-style:italic;
+  line-height:1.07;
+  letter-spacing:-.05em;
+  color:var(--ink);
+  overflow-wrap:break-word;
+}
+.swim-film-copy p{
+  max-width:440px;
+  font-size:clamp(16px,1.5vw,20px);
+  line-height:1.68;
+  color:var(--body);
+}
+.swim-film-credit{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--quiet);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.15em;
+}
+.swim-film-credit .credit-symbol{
+  color:var(--rose);
+  font-size:22px;
+  font-weight:400;
+  line-height:1;
+}
+.swim-film-visual{
+  margin:0;
+  min-width:0;
+  width:min(100%,360px);
+  justify-self:end;
+}
+.swim-film-frame{
+  padding:10px;
+  border:1px solid rgba(52,49,47,.11);
+  background:var(--milk);
+  box-shadow:0 18px 42px rgba(52,49,47,.085);
+}
+.swim-film-visual video{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:510px;
+  aspect-ratio:480/704;
+  background:#201e1e;
+  object-fit:contain;
+  cursor:pointer;
+}
+.swim-film-visual figcaption{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:14px 2px 0;
+  color:var(--quiet);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.13em;
+  line-height:1.35;
+  white-space:nowrap;
+}
+.swim-film-visual figcaption span{display:block;min-width:0}
+.swim-film-runtime{color:var(--ink);font-variant-numeric:tabular-nums}
+@media(max-width:950px){
+  .swim-film-inner{grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:38px;padding-block:77px}
+  .swim-film-copy h2{font-size:clamp(54px,7vw,76px)}
+  .swim-film-visual{width:min(100%,300px)}
+}
+@media(max-width:700px){
+  .swim-film-inner{grid-template-columns:minmax(0,1fr);gap:34px;padding-block:65px 72px}
+  .swim-film-copy{gap:25px;padding:0}
+  .swim-film-copy h2{font-size:clamp(53px,10vw,79px);margin-bottom:15px}
+  .swim-film-copy p{font-size:16px}
+  .swim-film-credit{display:none}
+  .swim-film-visual{width:min(100%,320px);justify-self:start}
+}
+@media(max-width:390px){
+  .swim-film-inner{gap:27px;padding-block:54px 60px}
+  .swim-film-copy h2{font-size:clamp(46px,11vw,57px)}
+  .swim-film-visual{width:min(100%,295px)}
+  .swim-film-frame{padding:7px}
+  .swim-film-visual figcaption{padding-top:11px;font-size:10px}
+}
