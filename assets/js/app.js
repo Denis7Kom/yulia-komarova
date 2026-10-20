@@ -281,217 +281,120 @@ const translations = {
   }
 };
 
-let activeLanguage = localStorage.getItem('yk-language') || 'ru';
-let rotatorWords = translations[activeLanguage].rotator;
-let rotatorIndex = 0;
 
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
+const supportedLanguages = ["ru", "en", "it", "de"];
+const initialLanguage = document.documentElement.lang.toLowerCase().slice(0, 2);
+const activeLanguage = supportedLanguages.includes(initialLanguage) ? initialLanguage : "ru";
+const siteRoot = new URL(document.querySelector('meta[name="site-root"]')?.content || "./", document.baseURI);
+const languagePaths = {ru:"",en:"en/",it:"it/",de:"de/"};
 
-function applyLanguage(language) {
-  const dictionary = translations[language] || translations.ru;
-  activeLanguage = language;
-  rotatorWords = dictionary.rotator;
-  document.documentElement.lang = dictionary.lang;
-  document.title = dictionary.title;
-
-  const metaDescription = document.querySelector('meta[name="description"]');
-  if (metaDescription) metaDescription.setAttribute('content', dictionary.description);
-
-  document.querySelectorAll('[data-i18n]').forEach((element) => {
-    const key = element.dataset.i18n;
-    if (dictionary[key]) element.textContent = dictionary[key];
+function applyLanguage(code) {
+  const words = translations[code] || translations.ru;
+  document.documentElement.lang = words.lang;
+  document.title = words.title;
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = words.description;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = words[el.dataset.i18n];
+    if (typeof v === "string") el.textContent = v;
   });
-
-  document.querySelectorAll('[data-i18n-html]').forEach((element) => {
-    const key = element.dataset.i18nHtml;
-    if (dictionary[key]) element.innerHTML = dictionary[key];
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const v = words[el.dataset.i18nHtml];
+    if (typeof v === "string") el.innerHTML = v;
   });
-
-  document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
-    element.dataset.i18nAttr.split(',').forEach((pair) => {
-      const [attribute, key] = pair.split(':').map((item) => item.trim());
-      if (attribute && key && dictionary[key]) element.setAttribute(attribute, dictionary[key]);
-    });
-  });
-
-  document.querySelectorAll('[data-lang-switch]').forEach((button) => {
-    const isActive = button.dataset.langSwitch === language;
-    button.classList.toggle('active', isActive);
-    button.setAttribute('aria-pressed', String(isActive));
-  });
-
-  if (rotator) rotator.textContent = rotatorWords[rotatorIndex % rotatorWords.length];
-  localStorage.setItem('yk-language', language);
-}
-
-window.addEventListener('pointermove', (event) => {
-  root.style.setProperty('--mx', `${event.clientX}px`);
-  root.style.setProperty('--my', `${event.clientY}px`);
-  if (cursor) {
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
-  }
-});
-
-window.addEventListener('scroll', () => {
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  const value = total > 0 ? window.scrollY / total : 0;
-  if (progress) progress.style.width = `${value * 100}%`;
-}, { passive: true });
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    if (entry.target.hasAttribute('data-count')) runCounter(entry.target);
-    entry.target.querySelectorAll('[data-count]').forEach(runCounter);
-  });
-}, { threshold: 0.18 });
-
-document.querySelectorAll('.reveal, [data-count]').forEach((element) => revealObserver.observe(element));
-
-function runCounter(element) {
-  if (element.dataset.done) return;
-  element.dataset.done = 'true';
-  const target = Number(element.dataset.count || 0);
-  const duration = 900;
-  const start = performance.now();
-
-  function frame(now) {
-    const progressValue = clamp((now - start) / duration, 0, 1);
-    const eased = 1 - Math.pow(1 - progressValue, 3);
-    element.textContent = Math.round(target * eased).toLocaleString(activeLanguage === 'ru' ? 'ru-RU' : activeLanguage === 'it' ? 'it-IT' : 'en-US');
-    if (progressValue < 1) requestAnimationFrame(frame);
-  }
-
-  requestAnimationFrame(frame);
-}
-
-document.querySelectorAll('[data-lang-switch]').forEach((button) => {
-  button.addEventListener('click', () => applyLanguage(button.dataset.langSwitch));
-});
-
-document.querySelectorAll('[data-spotlight]').forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
-    card.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
-  });
-});
-
-document.querySelectorAll('[data-tilt]').forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `rotateY(${x * 7}deg) rotateX(${-y * 7}deg)`;
-  });
-  card.addEventListener('pointerleave', () => {
-    card.style.transform = '';
-  });
-});
-
-document.querySelectorAll('.magnetic').forEach((element) => {
-  element.addEventListener('pointermove', (event) => {
-    const rect = element.getBoundingClientRect();
-    const x = event.clientX - rect.left - rect.width / 2;
-    const y = event.clientY - rect.top - rect.height / 2;
-    element.style.transform = `translate(${x * 0.16}px, ${y * 0.16}px)`;
-    if (cursor) {
-      cursor.style.width = '48px';
-      cursor.style.height = '48px';
-      cursor.style.borderColor = 'rgba(255,91,158,.8)';
+  document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+    for (const pair of el.dataset.i18nAttr.split(",")) {
+      const [attr, key] = pair.split(":").map(value => value.trim());
+      if (attr && typeof words[key] === "string") el.setAttribute(attr, words[key]);
     }
   });
-  element.addEventListener('pointerleave', () => {
-    element.style.transform = '';
-    if (cursor) {
-      cursor.style.width = '28px';
-      cursor.style.height = '28px';
-      cursor.style.borderColor = 'rgba(17,17,24,.55)';
-    }
+  document.querySelectorAll("[data-lang-switch]").forEach(button => {
+    const selected = button.dataset.langSwitch === code;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
   });
-});
+  const select = document.querySelector("[data-lang-select]");
+  if (select) select.value = code;
+}
+function visitLanguage(code) {
+  if (!supportedLanguages.includes(code) || code === activeLanguage) return;
+  try { localStorage.setItem("yk-language", code); } catch { /* private mode or blocked storage */ }
+  const next = new URL(languagePaths[code], siteRoot);
+  next.hash = location.hash;
+  location.assign(next.href);
+}
+document.querySelectorAll("[data-lang-switch]").forEach(el =>
+  el.addEventListener("click", () => visitLanguage(el.dataset.langSwitch))
+);
+document.querySelector("[data-lang-select]")?.addEventListener("change", event =>
+  visitLanguage(event.target.value)
+);
 
-const rotator = document.querySelector('[data-rotator]');
-setInterval(() => {
-  if (!rotator) return;
-  rotatorIndex = (rotatorIndex + 1) % rotatorWords.length;
-  rotator.animate([{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-8px)' }], { duration: 160, fill: 'forwards' }).onfinish = () => {
-    rotator.textContent = rotatorWords[rotatorIndex];
-    rotator.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 240, fill: 'forwards' });
-  };
-}, 2600);
+const bar = document.querySelector(".scroll-progress span");
+function updateScrollBar() {
+  const distance = document.documentElement.scrollHeight - window.innerHeight;
+  if (bar) bar.style.width = (distance > 0 ? window.scrollY / distance * 100 : 0) + "%";
+}
+addEventListener("scroll", updateScrollBar, {passive:true});
+addEventListener("resize", updateScrollBar, {passive:true});
+updateScrollBar();
 
-const dialog = document.querySelector('[data-command-dialog]');
-const commandOpen = document.querySelector('[data-command-open]');
-commandOpen?.addEventListener('click', () => dialog?.showModal());
-dialog?.querySelectorAll('a[href]').forEach((link) => {
-  link.addEventListener('click', () => { if (dialog.open) dialog.close(); });
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) {
+      e.target.classList.add("visible");
+      observer.unobserve(e.target);
+    }
+  }, {threshold:0.08});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+}
+
+const commandDialog = document.querySelector("[data-command-dialog]");
+document.querySelector("[data-command-open]")?.addEventListener("click", () => {
+  if (commandDialog && !commandDialog.open) commandDialog.showModal();
 });
-window.addEventListener('keydown', (event) => {
-  const isCommand = event.metaKey || event.ctrlKey;
-  if (isCommand && event.key.toLowerCase() === 'k') {
+commandDialog?.querySelectorAll("a[href]").forEach(link =>
+  link.addEventListener("click", () => commandDialog.close())
+);
+
+const artDialog = document.querySelector("[data-art-lightbox]");
+const artImage = artDialog?.querySelector("[data-art-lightbox-image]");
+const artNumber = artDialog?.querySelector("[data-art-counter]");
+const artworks = [...document.querySelectorAll(".artwork-item a.artwork-image")];
+let artIndex = 0;
+function setArt(index) {
+  if (!artImage || !artNumber || artworks.length === 0) return;
+  artIndex = (index + artworks.length) % artworks.length;
+  const selected = artworks[artIndex];
+  artImage.src = selected.href;
+  artImage.alt = selected.querySelector("img")?.alt || "";
+  artNumber.textContent = String(artIndex + 1).padStart(2,"0") + " / " + String(artworks.length).padStart(2,"0");
+}
+artworks.forEach((link,index) => link.addEventListener("click", event => {
+  if (!artDialog || !artImage) return;
+  event.preventDefault();
+  setArt(index);
+  if (!artDialog.open) artDialog.showModal();
+}));
+artDialog?.querySelector("[data-art-prev]")?.addEventListener("click", () => setArt(artIndex - 1));
+artDialog?.querySelector("[data-art-next]")?.addEventListener("click", () => setArt(artIndex + 1));
+artDialog?.querySelector("[data-art-close]")?.addEventListener("click", () => artDialog.close());
+artDialog?.addEventListener("click", event => {
+  if (event.target === artDialog) artDialog.close();
+});
+document.addEventListener("keydown", event => {
+  if (artDialog?.open) {
+    if (event.key === "ArrowLeft") {event.preventDefault();setArt(artIndex - 1);}
+    if (event.key === "ArrowRight") {event.preventDefault();setArt(artIndex + 1);}
+    return;
+  }
+  const target = event.target;
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k" &&
+      !event.repeat && !target?.matches?.("input, textarea, select, [contenteditable]")) {
     event.preventDefault();
-    dialog?.showModal();
+    if (commandDialog && !commandDialog.open) commandDialog.showModal();
   }
-  if (event.key === 'Escape' && dialog?.open) dialog.close();
 });
-
-const canvas = document.getElementById('auroraCanvas');
-const ctx = canvas?.getContext('2d');
-let width = 0;
-let height = 0;
-let particles = [];
-
-function resizeCanvas() {
-  if (!canvas || !ctx) return;
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = Math.floor(width * ratio);
-  canvas.height = Math.floor(height * ratio);
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-  particles = Array.from({ length: Math.min(70, Math.floor((width * height) / 18000)) }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    r: 80 + Math.random() * 160,
-    vx: (Math.random() - 0.5) * 0.18,
-    vy: (Math.random() - 0.5) * 0.18,
-    hue: 270 + Math.random() * 95,
-    alpha: 0.06 + Math.random() * 0.07
-  }));
-}
-
-function drawAurora() {
-  if (!ctx) return;
-  ctx.clearRect(0, 0, width, height);
-  particles.forEach((p) => {
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x < -p.r) p.x = width + p.r;
-    if (p.x > width + p.r) p.x = -p.r;
-    if (p.y < -p.r) p.y = height + p.r;
-    if (p.y > height + p.r) p.y = -p.r;
-    const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
-    gradient.addColorStop(0, `hsla(${p.hue}, 92%, 70%, ${p.alpha})`);
-    gradient.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = gradient;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  });
-  requestAnimationFrame(drawAurora);
-}
-
 applyLanguage(activeLanguage);
-
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-  drawAurora();
-}
