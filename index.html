@@ -9,7 +9,7 @@
   <title>Yulia Komarova — Best Sound</title>
   <link rel="icon" href="./favicon.svg?v=2" type="image/svg+xml">
   <link rel="preload" href="./assets/img/portrait.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="./assets/css/editorial.css">
+  <link rel="stylesheet" href="./assets/css/editorial.css?v=20261020-swim2">
   <script src="./assets/js/app.js" defer></script>
 </head>
 <body>
@@ -92,19 +92,26 @@
       <div class="feature-photo reveal"><img src="./assets/img/swimcup.webp" alt="Юлия Комарова с наградой SwimCup" width="960" height="1280" loading="lazy" decoding="async"><span class="image-index">03 / SWIMCUP — 2024</span></div>
     </section>
 
-    <section class="swim-film section-shell" aria-labelledby="swim-film-title">
-      <div class="swim-film-copy reveal">
-        <div class="section-meta"><span>04 /</span><span data-i18n="swimFilmKicker">Плавание / видео</span></div>
-        <h2 id="swim-film-title" data-i18n="swimFilmTitle">В движении.</h2>
-        <p data-i18n="swimFilmCaption">Короткий фрагмент тренировки в бассейне.</p>
+    <section class="swim-film" aria-labelledby="swim-film-title">
+      <div class="swim-film-inner section-shell">
+        <div class="swim-film-copy reveal">
+          <div class="section-meta"><span>04 /</span><span data-i18n="swimFilmKicker">Плавание / видео</span></div>
+          <div class="swim-film-message">
+            <h2 id="swim-film-title" data-i18n="swimFilmTitle">В движении.</h2>
+            <p data-i18n="swimFilmCaption">Короткий фрагмент тренировки в бассейне.</p>
+          </div>
+          <div class="swim-film-credit" aria-hidden="true"><span>YULIA KOMAROVA</span><span class="credit-symbol">↗</span></div>
+        </div>
+        <figure class="swim-film-visual reveal">
+          <div class="swim-film-frame">
+            <video controls playsinline preload="metadata" poster="./assets/img/swimming-in-motion-poster.webp" aria-label="Юлия во время плавания" data-i18n-attr="aria-label:swimFilmAria">
+              <source src="./assets/img/swimming-in-motion.mp4" type="video/mp4">
+              <span data-i18n="swimFilmFallback">Ваш браузер не поддерживает воспроизведение видео.</span>
+            </video>
+          </div>
+          <figcaption><span>01 / FILM</span><span class="swim-film-runtime">00:05</span></figcaption>
+        </figure>
       </div>
-      <figure class="swim-film-visual reveal">
-        <video controls playsinline preload="none" poster="./assets/img/swimming-in-motion-poster.webp" aria-label="Юлия во время плавания" data-i18n-attr="aria-label:swimFilmAria">
-          <source src="./assets/img/swimming-in-motion.mp4" type="video/mp4">
-          <span data-i18n="swimFilmFallback">Ваш браузер не поддерживает воспроизведение видео.</span>
-        </video>
-        <figcaption><span>SWIMMING / 01</span><span>00:05</span></figcaption>
-      </figure>
     </section>
 
     <section class="process section-shell" id="turnkey" aria-labelledby="process-title">
