@@ -1,50 +1,38 @@
 # Yulia Komarova
 
-Статическая личная страница Yulia Komarova для публикации через GitHub Pages.
+Personal website for concert organizer and Best Sound representative Yulia Komarova.
 
-## Website
+**Website:** https://denis7kom.github.io/yulia-komarova/
 
-```text
-https://denis7kom.github.io/yulia-komarova/
-```
+## Sections
 
-## Stack
+- Biography and professional approach
+- Best Sound and concert organization
+- Swimming and video
+- Painting and drawing gallery
+- Contact links
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- GitHub Pages
+## Languages
 
-## Features
+Russian (default), English, Italian and German have individual static pages, all published through GitHub Pages:
 
-- premium minimal visual style;
-- responsive layout;
-- canvas aurora background;
-- scroll progress indicator;
-- reveal animations;
-- animated counters;
-- command palette;
-- custom cursor glow;
-- magnetic buttons;
-- 3D tilt cards;
-- RU / EN / IT language switcher.
+- [Русский](https://denis7kom.github.io/yulia-komarova/)
+- [English](https://denis7kom.github.io/yulia-komarova/en/)
+- [Italiano](https://denis7kom.github.io/yulia-komarova/it/)
+- [Deutsch](https://denis7kom.github.io/yulia-komarova/de/)
 
-## Security
+## Technology
 
-Security policy: [`SECURITY.md`](./SECURITY.md)
+Static HTML, CSS and vanilla JavaScript. No backend, client-side framework or build step. Images use WebP; videos use MP4.
 
-Do not publish vulnerability details in public issues, pull requests, discussions, comments, or social media. Report security issues privately to the repository owner.
-
-## License and usage restrictions
-
-This project is proprietary. All rights are reserved.
-
-The repository is public only for deployment, portfolio, review, and demonstration purposes. Public access does not grant permission to copy, reuse, redistribute, resell, clone, host, modify, publish, sublicense, or use this website as a template.
-
-See [`LICENSE`](./LICENSE) for full restrictions.
+The repository includes canonical URLs, Open Graph and Twitter metadata, JSON-LD structured data, alternate-language links, `robots.txt` and `sitemap.xml`.
 
 ## Deployment
 
-```text
-Settings → Pages → Build and deployment → Source → Deploy from a branch → main → /root
-```
+GitHub Pages publishes the `main` branch from the repository root.
+
+## Security and intellectual property
+
+See [SECURITY.md](SECURITY.md) for security reporting and [LICENSE](LICENSE) for copyright and usage terms.
+
+Copyright © 2026 Denis Komarov. All rights reserved.
