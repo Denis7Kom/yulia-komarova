@@ -347,3 +347,51 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   .swim-film-frame{padding:7px}
   .swim-film-visual figcaption{padding-top:11px;font-size:10px}
 }
+
+
+/* Final editorial polish: language navigation, accessible artwork viewer, and resilient reveals. */
+.language-mobile{display:none;color:var(--ink);border:1px solid var(--line);background:var(--milk);border-radius:0;padding:10px 25px 10px 10px;font-size:12px;font-weight:600;letter-spacing:.08em;min-height:40px;cursor:pointer}
+.header-inner>*{min-width:0}
+.header-actions{min-width:0}
+.main-nav{gap:clamp(15px,1.8vw,28px)}
+.main-nav a{font-size:12px}
+.artwork-image{cursor:zoom-in}
+.art-lightbox{
+  position:fixed;inset:0;margin:auto;
+  box-sizing:border-box;width:min(96vw,1120px);max-width:none;
+  height:min(94dvh,960px);max-height:none;
+  padding:clamp(14px,2vw,25px);border:1px solid #d7d3cc;
+  background:#eeede8;color:var(--ink);
+  box-shadow:0 28px 130px rgba(25,22,23,.26);
+}
+.art-lightbox::backdrop{background:rgba(29,26,26,.88)}
+.art-lightbox[open]{display:flex;flex-direction:column;gap:15px}
+.art-lightbox-toolbar,.art-lightbox-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;flex:0 0 auto}
+.art-lightbox-toolbar{border-bottom:1px solid var(--line);padding-bottom:13px;font-size:12px;letter-spacing:.16em;color:var(--quiet)}
+.art-lightbox-toolbar button,.art-lightbox-controls button{cursor:pointer;background:transparent;border:1px solid #beb7b1;color:var(--ink);width:46px;height:44px;display:grid;place-items:center;font-size:23px;transition:background .2s,border-color .2s}
+.art-lightbox-toolbar button:hover,.art-lightbox-controls button:hover{background:var(--milk);border-color:var(--ink)}
+.art-lightbox-stage{min-height:0;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.art-lightbox-stage img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.art-lightbox-controls{border-top:1px solid var(--line);padding-top:13px;color:var(--quiet);font-size:10px;letter-spacing:.12em;text-align:center}
+.closing-actions a>span:first-child{font-size:12px;line-height:1.45;overflow-wrap:break-word}
+.closing-actions a>span:last-child{font-size:21px}
+.reveal{opacity:1;transform:none}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){
+  .reveal.visible{animation:editorial-reveal .55s var(--ease) both}
+  @keyframes editorial-reveal{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+}
+@media(max-width:650px){
+  .language-switch{display:none}
+  .language-mobile{display:block;min-width:63px}
+  .header-actions{gap:12px}
+  .art-lightbox{width:100vw;height:100dvh;padding:14px}
+  .art-lightbox[open]{gap:8px}
+  .art-lightbox-toolbar,.art-lightbox-controls{gap:12px}
+  .art-lightbox-controls>span{font-size:9px}
+}
+@media(max-width:350px){
+  .language-mobile{font-size:11px;min-width:59px;padding:8px 6px}
+  .header-actions{gap:8px}
+  .art-lightbox-toolbar button,.art-lightbox-controls button{width:42px;height:42px}
+}
