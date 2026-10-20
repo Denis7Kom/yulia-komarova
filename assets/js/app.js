@@ -4,6 +4,11 @@ const cursor = document.querySelector('.cursor-glow');
 
 const translations = {
   ru: {
+    swimFilmKicker: 'Плавание / видео',
+    swimFilmTitle: 'В движении.',
+    swimFilmCaption: 'Короткий фрагмент тренировки в бассейне.',
+    swimFilmAria: 'Юлия во время плавания в бассейне',
+    swimFilmFallback: 'Ваш браузер не поддерживает воспроизведение видео.',
     artKicker: 'Искусство',
     artTitle: 'Живопись и рисунок.',
     artMenu: 'Живопись',
@@ -91,6 +96,11 @@ const translations = {
     rotator: ['Концертная работа', 'Бэкстейдж', 'Спортивная дисциплина', 'Ритм события']
   },
   en: {
+    swimFilmKicker: 'Swimming / Film',
+    swimFilmTitle: 'In motion.',
+    swimFilmCaption: 'A moment from the swimming pool.',
+    swimFilmAria: 'Yulia swimming in a pool',
+    swimFilmFallback: 'Your browser does not support video playback.',
     artKicker: 'Art',
     artTitle: 'Painting & drawing.',
     artMenu: 'Artwork',
@@ -178,6 +188,11 @@ const translations = {
     rotator: ['Concert work', 'Backstage focus', 'Sport discipline', 'Event rhythm']
   },
   it: {
+    swimFilmKicker: 'Nuoto / Video',
+    swimFilmTitle: 'In movimento.',
+    swimFilmCaption: 'Un momento di allenamento in piscina.',
+    swimFilmAria: 'Yulia mentre nuota in piscina',
+    swimFilmFallback: 'Il browser non supporta la riproduzione video.',
     artKicker: 'Arte',
     artTitle: 'Pittura e disegno.',
     artMenu: 'Opere',
