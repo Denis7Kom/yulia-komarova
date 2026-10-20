@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="rose" x1="12" y1="8" x2="114" y2="120" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#e4a0bf"/>
-      <stop offset=".55" stop-color="#c85d89"/>
-      <stop offset="1" stop-color="#a54774"/>
-    </linearGradient>
-  </defs>
-  <rect width="128" height="128" rx="35" fill="url(#rose)"/>
-  <text x="64" y="79" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="750" letter-spacing="-5" fill="white" text-anchor="middle">YK</text>
-  <circle cx="108" cy="21" r="8" fill="#fff5fa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Yulia Komarova">
+  <rect width="128" height="128" rx="24" fill="#eeede8"/>
+  <rect x="1.5" y="1.5" width="125" height="125" rx="22.5" fill="none" stroke="#d6d1c9" stroke-width="3"/>
+  <text x="60" y="81" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="70" font-weight="700" letter-spacing="-8" fill="#34312f">yk</text>
+  <circle cx="105" cy="87" r="7" fill="#b37d83"/>
 </svg>
