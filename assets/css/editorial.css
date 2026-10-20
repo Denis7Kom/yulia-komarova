@@ -29,7 +29,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 .site-header{position:sticky;top:0;z-index:80;border-bottom:1px solid rgba(52,49,47,.12);background:rgba(238,237,232,.94);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 .header-inner{width:min(1680px,calc(100% - 96px));min-height:106px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;column-gap:clamp(18px,2vw,36px)}
 .wordmark{display:inline-flex;align-items:center;gap:15px;justify-self:start;line-height:1;min-width:0}
-.wordmark-main{font-family:var(--serif);font-weight:700;font-size:37px;letter-spacing:-.075em;line-height:.78}
+.wordmark-main{display:flex;flex-direction:column;align-items:flex-start;gap:0;font-family:var(--serif);font-weight:700;font-size:37px;letter-spacing:-.048em;line-height:1.08;white-space:nowrap}.wordmark-main>span{display:block}
 .wordmark-period{color:var(--rose)}
 .wordmark-caption{display:inline-flex;align-items:center;gap:9px;align-self:center;font-size:10px;line-height:1.4;letter-spacing:.15em;font-weight:500;color:var(--quiet);white-space:nowrap;max-width:none}
 .wordmark-caption span{font-size:16px;display:inline;margin-top:0;color:var(--rose);line-height:1}
@@ -162,7 +162,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   html{scroll-padding-top:86px}
   .section-shell,.header-inner{width:calc(100% - 36px)}
   .header-inner{min-height:78px;gap:10px}
-  .wordmark{gap:0}.wordmark-main{font-size:27px}.wordmark-caption{display:none}
+  .wordmark{gap:0}.wordmark-main{font-size:27px;line-height:1.06;letter-spacing:-.045em}.wordmark-caption{display:none}
   .header-actions{gap:13px}.language-switch{gap:5px}.lang-btn{font-size:11px;padding:7px 0}.command-btn{width:40px;min-width:40px;height:40px;padding:0;min-height:40px;font-size:0;gap:0;justify-content:center}.command-btn>span:first-child{display:none}.menu-symbol{font-size:21px}
   .hero{padding-top:15px}
   .hero-inner{display:flex;flex-direction:column-reverse;min-height:auto}
@@ -210,5 +210,5 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   .closing-actions a{width:100%;min-width:0;gap:25px}
   .site-footer{min-height:115px;flex-wrap:wrap;gap:12px;padding:28px 0}.footer-wordmark{width:100%}
 }
-@media(max-width:350px){.section-shell,.header-inner{width:calc(100% - 26px)}.wordmark-main{font-size:22px}.header-actions{gap:8px}.hero-copy{padding:25px 17px 34px}.hero h1{font-size:41px}.hero h1 em{font-size:.76em}.hero-photo figcaption{letter-spacing:0}}
+@media(max-width:350px){.section-shell,.header-inner{width:calc(100% - 26px)}.wordmark-main{font-size:22px;line-height:1.06}.header-actions{gap:8px}.hero-copy{padding:25px 17px 34px}.hero h1{font-size:41px}.hero h1 em{font-size:.76em}.hero-photo figcaption{letter-spacing:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-photo img,.feature-photo img{transition:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
