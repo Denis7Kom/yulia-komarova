@@ -4,6 +4,11 @@ const cursor = document.querySelector('.cursor-glow');
 
 const translations = {
   ru: {
+    heroPhotoAlt: "Юлия Комарова — портрет",
+    backstagePhotoAlt: "Юлия Комарова во время подготовки мероприятия",
+    swimCupPhotoAlt: "Юлия Комарова с наградой SwimCup",
+    artLightboxLabel: "Галерея рисунков Юлии",
+    backToTop: "Наверх",
     contactInstagram: "Instagram Юлии",
     contactAgency: "Сайт Best Sound",
     lightboxPrev: "Предыдущая работа",
@@ -101,6 +106,11 @@ const translations = {
     rotator: ['Концертная работа', 'Бэкстейдж', 'Спортивная дисциплина', 'Ритм события']
   },
   en: {
+    heroPhotoAlt: "Portrait of Yulia Komarova",
+    backstagePhotoAlt: "Yulia Komarova during event preparations",
+    swimCupPhotoAlt: "Yulia Komarova with a SwimCup award",
+    artLightboxLabel: "Yulia's artwork gallery",
+    backToTop: "Back to top",
     contactInstagram: "Yulia on Instagram",
     contactAgency: "Explore Best Sound",
     lightboxPrev: "Previous artwork",
@@ -198,6 +208,11 @@ const translations = {
     rotator: ['Concert work', 'Backstage focus', 'Sport discipline', 'Event rhythm']
   },
   it: {
+    heroPhotoAlt: "Ritratto di Yulia Komarova",
+    backstagePhotoAlt: "Yulia Komarova durante la preparazione di un evento",
+    swimCupPhotoAlt: "Yulia Komarova con un premio SwimCup",
+    artLightboxLabel: "Galleria delle opere di Yulia",
+    backToTop: "Torna all'inizio",
     contactInstagram: "Instagram di Yulia",
     contactAgency: "Scopri Best Sound",
     lightboxPrev: "Opera precedente",
@@ -295,6 +310,11 @@ const translations = {
     rotator: ['Lavoro concertistico', 'Focus backstage', 'Disciplina sportiva', 'Ritmo evento']
   },
   de: {
+    heroPhotoAlt: "Porträt von Yulia Komarova",
+    backstagePhotoAlt: "Yulia Komarova bei den Vorbereitungen für eine Veranstaltung",
+    swimCupPhotoAlt: "Yulia Komarova mit einer SwimCup-Auszeichnung",
+    artLightboxLabel: "Galerie mit Yulias Kunstwerken",
+    backToTop: "Zurück nach oben",
     lang: "de",
     title: "Yulia Komarova — Best Sound",
     description: "Yulia Komarova organisiert Konzerte und vertritt Best Sound. Persönliches Porträt über Musik, Kunst und Schwimmen.",
