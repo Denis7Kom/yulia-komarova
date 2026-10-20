@@ -229,3 +229,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 @media(max-width:900px){.artworks{padding:95px 0 110px}.artworks-heading{grid-template-columns:1fr;gap:25px;padding-bottom:38px}.artworks-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}}
 @media(max-width:650px){.artworks{padding:78px 0 85px}.artworks-heading h2{font-size:clamp(44px,10vw,65px)}.artworks-grid{gap:20px 11px}.artwork-item figcaption{font-size:9px;padding-top:9px}.artwork-item figcaption span:last-child{font-size:15px}}
 @media(max-width:390px){.artworks-grid{grid-template-columns:1fr}.artwork-image img,.artwork-image video{aspect-ratio:4/4.5}}
+
+
+/* Swimming video — restrained editorial companion to the SwimCup section */
+.swim-film{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,420px);align-items:center;gap:clamp(36px,7vw,150px);padding-top:105px;padding-bottom:120px;border-bottom:1px solid var(--line)}
+.swim-film-copy{min-width:0}
+.swim-film-copy h2{font-family:var(--serif);font-size:clamp(62px,7.2vw,112px);font-weight:400;line-height:1.04;letter-spacing:-.055em;margin:35px 0 24px;overflow-wrap:break-word}
+.swim-film-copy p{font-size:clamp(16px,1.4vw,19px);line-height:1.7;color:var(--body);max-width:480px}
+.swim-film-visual{margin:0;min-width:0;width:100%;justify-self:end}
+.swim-film-visual video{display:block;width:100%;height:auto;aspect-ratio:480/704;object-fit:cover;background:#34312f;cursor:pointer}
+.swim-film-visual figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:16px;border-top:0;font-size:10px;letter-spacing:.12em;color:var(--quiet)}
+@media(max-width:900px){.swim-film{grid-template-columns:minmax(0,1fr) minmax(250px,40%);gap:36px;padding-top:85px;padding-bottom:90px}.swim-film-copy h2{font-size:clamp(50px,7vw,77px)}}
+@media(max-width:650px){.swim-film{display:flex;flex-direction:column;align-items:stretch;gap:34px;padding-top:65px;padding-bottom:80px}.swim-film-copy h2{font-size:clamp(54px,11vw,72px);margin:20px 0 15px}.swim-film-visual{max-width:480px;align-self:center}.swim-film-visual figcaption{padding-top:12px}}
