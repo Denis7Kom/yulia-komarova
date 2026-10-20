@@ -212,3 +212,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 }
 @media(max-width:350px){.section-shell,.header-inner{width:calc(100% - 26px)}.wordmark-main{font-size:22px;line-height:1.06}.header-actions{gap:8px}.hero-copy{padding:25px 17px 34px}.hero h1{font-size:41px}.hero h1 em{font-size:.76em}.hero-photo figcaption{letter-spacing:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-photo img,.feature-photo img{transition:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* Personal art gallery: photographs and a short studio video */
+.artworks{padding-top:130px;padding-bottom:155px}
+.artworks-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:end;gap:8%;border-top:1px solid var(--line);padding:28px 0 58px}
+.artworks-heading h2{font-family:var(--serif);font-size:clamp(51px,5.5vw,86px);font-weight:400;line-height:1.06;letter-spacing:-.05em;overflow-wrap:break-word}
+.artworks-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 22px}
+.artwork-item{min-width:0}
+.artwork-image{display:block;position:relative;overflow:hidden;background:#dfd9d0}
+.artwork-image img,.artwork-image video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.artwork-image img{height:auto;transition:transform .75s var(--ease),filter .4s ease}
+.artwork-image:hover img{transform:scale(1.03);filter:contrast(1.04)}
+.artwork-image video{background:#c0acaa;object-position:center;cursor:pointer}
+.artwork-item figcaption{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:14px 1px 0;font-size:10px;letter-spacing:.15em;color:var(--quiet)}
+.artwork-item figcaption span:last-child{font-size:18px;color:var(--rose)}
+@media(max-width:900px){.artworks{padding:95px 0 110px}.artworks-heading{grid-template-columns:1fr;gap:25px;padding-bottom:38px}.artworks-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}}
+@media(max-width:650px){.artworks{padding:78px 0 85px}.artworks-heading h2{font-size:clamp(44px,10vw,65px)}.artworks-grid{gap:20px 11px}.artwork-item figcaption{font-size:9px;padding-top:9px}.artwork-item figcaption span:last-child{font-size:15px}}
+@media(max-width:390px){.artworks-grid{grid-template-columns:1fr}.artwork-image img,.artwork-image video{aspect-ratio:4/4.5}}

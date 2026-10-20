@@ -4,6 +4,16 @@ const cursor = document.querySelector('.cursor-glow');
 
 const translations = {
   ru: {
+    artKicker: 'Искусство',
+    artTitle: 'Живопись и рисунок.',
+    artMenu: 'Живопись',
+    artAltFlowerStudy: 'Цветочная живопись Юлии, деталь розовых лепестков',
+    artAltForest: 'Графический женский портрет с лесным пейзажем',
+    artAltExpression: 'Графический портрет мужчины с усами',
+    artAltCharcoal: 'Женский портрет, рисунок углём',
+    artAltFloral: 'Цветочная картина Юлии на мольберте',
+    artVideoLabel: 'Видео с цветочной картиной Юлии',
+    artVideoFallback: 'Ваш браузер не поддерживает воспроизведение видео.',
     lang: 'ru',
     skipLink: 'К содержанию',
     title: 'Yulia Komarova — Best Sound',
@@ -81,6 +91,16 @@ const translations = {
     rotator: ['Концертная работа', 'Бэкстейдж', 'Спортивная дисциплина', 'Ритм события']
   },
   en: {
+    artKicker: 'Art',
+    artTitle: 'Painting & drawing.',
+    artMenu: 'Artwork',
+    artAltFlowerStudy: 'Yulia\'s floral painting, close-up of soft pink petals',
+    artAltForest: 'Charcoal portrait of a woman with a forest landscape',
+    artAltExpression: 'Charcoal portrait of a man with a moustache',
+    artAltCharcoal: 'Expressive charcoal portrait of a woman',
+    artAltFloral: 'Yulia\'s floral canvas on an easel',
+    artVideoLabel: 'Video of Yulia\'s floral painting',
+    artVideoFallback: 'Your browser does not support video playback.',
     lang: 'en',
     skipLink: 'Skip to content',
     title: 'Yulia Komarova — Best Sound',
@@ -158,6 +178,16 @@ const translations = {
     rotator: ['Concert work', 'Backstage focus', 'Sport discipline', 'Event rhythm']
   },
   it: {
+    artKicker: 'Arte',
+    artTitle: 'Pittura e disegno.',
+    artMenu: 'Opere',
+    artAltFlowerStudy: 'Dipinto floreale di Yulia, dettaglio di petali rosa',
+    artAltForest: 'Ritratto a carboncino di una donna con paesaggio boschivo',
+    artAltExpression: 'Ritratto a carboncino di un uomo con i baffi',
+    artAltCharcoal: 'Ritratto espressivo a carboncino di una donna',
+    artAltFloral: 'Dipinto floreale di Yulia su un cavalletto',
+    artVideoLabel: 'Video del dipinto floreale di Yulia',
+    artVideoFallback: 'Il browser non supporta la riproduzione video.',
     lang: 'it',
     skipLink: 'Vai al contenuto',
     title: 'Yulia Komarova — Best Sound',
