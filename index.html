@@ -5,12 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#eeede8">
-  <meta name="description" content="Юлия Комарова — организатор концертов и представитель агентства Best Sound.">
+  <meta name="description" content="Юлия Комарова — организатор концертов Best Sound, живопись и плавание.">
+  <meta name="site-root" content="https://denis7kom.github.io/yulia-komarova/">
+  <link rel="canonical" href="https://denis7kom.github.io/yulia-komarova/">
+  <link rel="alternate" hreflang="ru" href="https://denis7kom.github.io/yulia-komarova/">
+  <link rel="alternate" hreflang="en" href="https://denis7kom.github.io/yulia-komarova/en/">
+  <link rel="alternate" hreflang="it" href="https://denis7kom.github.io/yulia-komarova/it/">
+  <link rel="alternate" hreflang="de" href="https://denis7kom.github.io/yulia-komarova/de/">
+  <link rel="alternate" hreflang="x-default" href="https://denis7kom.github.io/yulia-komarova/">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Yulia Komarova">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:url" content="https://denis7kom.github.io/yulia-komarova/">
+  <meta property="og:title" content="Yulia Komarova — Best Sound">
+  <meta property="og:description" content="Юлия Комарова — организатор концертов Best Sound, живопись и плавание.">
+  <meta property="og:image" content="https://denis7kom.github.io/yulia-komarova/assets/img/portrait.webp">
+  <meta property="og:image:alt" content="Юлия Комарова — портрет">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yulia Komarova — Best Sound">
+  <meta name="twitter:description" content="Юлия Комарова — организатор концертов Best Sound, живопись и плавание.">
+  <meta name="twitter:image" content="https://denis7kom.github.io/yulia-komarova/assets/img/portrait.webp">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Yulia Komarova","url":"https://denis7kom.github.io/yulia-komarova/","description":"Концертный организатор, представитель Best Sound, увлекается живописью и плаванием.","sameAs":["https://www.instagram.com/best.julia/"],"worksFor":{"@type":"Organization","name":"Best Sound","url":"https://sound-agency.ru/"}}
+  </script>
   <title>Yulia Komarova — Best Sound</title>
   <link rel="icon" href="./favicon.svg?v=2" type="image/svg+xml">
   <link rel="preload" href="./assets/img/portrait.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="./assets/css/editorial.css?v=20261020-swim2">
-  <script src="./assets/js/app.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/editorial.css?v=20261020-finish1">
+  <script src="./assets/js/app.js?v=20261020-finish1" defer></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -26,6 +51,7 @@
         <a href="#about" data-i18n="navProfile">Биография</a>
         <a href="#agency">Best Sound</a>
         <a href="#signature" data-i18n="navSignature">Подход</a>
+        <a href="#artworks" data-i18n="artMenu">Живопись</a>
         <a href="#turnkey" data-i18n="navEvents">События</a>
       </nav>
       <div class="header-actions">
@@ -35,7 +61,15 @@
           <button class="lang-btn" data-lang-switch="en" type="button" aria-pressed="false">EN</button>
           <span aria-hidden="true">/</span>
           <button class="lang-btn" data-lang-switch="it" type="button" aria-pressed="false">IT</button>
+          <span aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang-switch="de" type="button" aria-pressed="false">DE</button>
         </div>
+        <select class="language-mobile" data-lang-select aria-label="Выбор языка" data-i18n-attr="aria-label:languageSelector">
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+          <option value="it">IT</option>
+          <option value="de">DE</option>
+        </select>
         <button class="command-btn" type="button" data-command-open data-i18n-attr="aria-label:commandLabel" aria-label="Открыть меню"><span data-i18n="commandButton">Меню</span><span class="menu-symbol" aria-hidden="true">↗</span></button>
       </div>
     </div>
@@ -51,7 +85,7 @@
           <a class="editorial-link" href="#about"><span data-i18n="navProfile">Биография</span><span aria-hidden="true">↗</span></a>
         </div>
         <figure class="hero-photo reveal">
-          <img src="./assets/img/portrait.webp" alt="Юлия Комарова — портрет" width="1024" height="1536" fetchpriority="high" decoding="async">
+          <img src="./assets/img/portrait.webp" alt="Юлия Комарова — портрет" data-i18n-attr="alt:heroPhotoAlt" width="1024" height="1536" fetchpriority="high" decoding="async">
           <figcaption><span>YULIA KOMAROVA / 01</span><span>001 — BEST SOUND</span></figcaption>
         </figure>
       </div>
@@ -81,7 +115,7 @@
     </section>
 
     <section class="editorial-feature feature-agency" id="agency" aria-labelledby="agency-title">
-      <div class="feature-photo reveal"><img src="./assets/img/backstage.webp" alt="Юлия Комарова во время подготовки мероприятия" width="960" height="1280" loading="lazy" decoding="async"><span class="image-index">02 / BEST SOUND</span></div>
+      <div class="feature-photo reveal"><img src="./assets/img/backstage.webp" alt="Юлия Комарова во время подготовки мероприятия" data-i18n-attr="alt:backstagePhotoAlt" width="960" height="1280" loading="lazy" decoding="async"><span class="image-index">02 / BEST SOUND</span></div>
       <div class="feature-content reveal"><div class="section-meta"><span>03 /</span><span>BEST SOUND</span></div><h2 id="agency-title" data-i18n="cardAgencyTitle">Представитель агентства Best Sound</h2><p data-i18n="cardConcertsText">Её деятельность связана с организацией концертных событий, гастрольной логикой, работой с площадкой, командой и бэкстейдж-процессами.</p><p class="secondary-copy" data-i18n="cardProjectsText">В профессиональном контексте Best Sound представлены Alessandro Safina, Joe Lynn Turner и концертные направления по России и странам СНГ.</p><a class="editorial-link" href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer"><span>Best Sound</span><span aria-hidden="true">↗</span></a></div>
     </section>
 
@@ -89,7 +123,7 @@
 
     <section class="editorial-feature feature-sport" aria-labelledby="sport-title">
       <div class="feature-content reveal"><div class="section-meta"><span>04 /</span><span>SwimCup</span></div><h2 id="sport-title" data-i18n="cardSportTitle">Плавание и дисциплина</h2><p data-i18n="cardSportText">Юлия неоднократно участвовала в соревнованиях по плаванию в России и Италии, становилась призёром разных стартов, а в 2024 году выступила на международном SwimCup и вошла в топ-5. Спорт сформировал в ней выдержку, темп и способность работать на результат.</p><div class="editorial-score"><span>TOP</span><strong>05</strong><span>SWIMCUP / 2024</span></div></div>
-      <div class="feature-photo reveal"><img src="./assets/img/swimcup.webp" alt="Юлия Комарова с наградой SwimCup" width="960" height="1280" loading="lazy" decoding="async"><span class="image-index">03 / SWIMCUP — 2024</span></div>
+      <div class="feature-photo reveal"><img src="./assets/img/swimcup.webp" alt="Юлия Комарова с наградой SwimCup" data-i18n-attr="alt:swimCupPhotoAlt" width="960" height="1280" loading="lazy" decoding="async"><span class="image-index">03 / SWIMCUP — 2024</span></div>
     </section>
 
     <section class="swim-film" aria-labelledby="swim-film-title">
@@ -131,31 +165,31 @@
       </div>
       <div class="artworks-grid">
         <figure class="artwork-item reveal">
-          <a class="artwork-image" href="./assets/img/art-flower-study.webp" target="_blank" rel="noopener noreferrer" aria-label="1 / 06">
+          <a class="artwork-image" href="./assets/img/art-flower-study.webp" target="_blank" rel="noopener noreferrer" >
             <img src="./assets/img/art-flower-study.webp" alt="" data-i18n-attr="alt:artAltFlowerStudy" loading="lazy" decoding="async" width="1000" height="1333">
           </a>
           <figcaption><span>01 / 06</span><span aria-hidden="true">↗</span></figcaption>
         </figure>
         <figure class="artwork-item reveal">
-          <a class="artwork-image" href="./assets/img/art-forest-portrait.webp" target="_blank" rel="noopener noreferrer" aria-label="2 / 06">
+          <a class="artwork-image" href="./assets/img/art-forest-portrait.webp" target="_blank" rel="noopener noreferrer" >
             <img src="./assets/img/art-forest-portrait.webp" alt="" data-i18n-attr="alt:artAltForest" loading="lazy" decoding="async" width="1000" height="1333">
           </a>
           <figcaption><span>02 / 06</span><span aria-hidden="true">↗</span></figcaption>
         </figure>
         <figure class="artwork-item reveal">
-          <a class="artwork-image" href="./assets/img/art-expression.webp" target="_blank" rel="noopener noreferrer" aria-label="3 / 06">
+          <a class="artwork-image" href="./assets/img/art-expression.webp" target="_blank" rel="noopener noreferrer" >
             <img src="./assets/img/art-expression.webp" alt="" data-i18n-attr="alt:artAltExpression" loading="lazy" decoding="async" width="1000" height="1333">
           </a>
           <figcaption><span>03 / 06</span><span aria-hidden="true">↗</span></figcaption>
         </figure>
         <figure class="artwork-item reveal">
-          <a class="artwork-image" href="./assets/img/art-charcoal-portrait.webp" target="_blank" rel="noopener noreferrer" aria-label="4 / 06">
+          <a class="artwork-image" href="./assets/img/art-charcoal-portrait.webp" target="_blank" rel="noopener noreferrer" >
             <img src="./assets/img/art-charcoal-portrait.webp" alt="" data-i18n-attr="alt:artAltCharcoal" loading="lazy" decoding="async" width="1000" height="1333">
           </a>
           <figcaption><span>04 / 06</span><span aria-hidden="true">↗</span></figcaption>
         </figure>
         <figure class="artwork-item reveal">
-          <a class="artwork-image" href="./assets/img/art-floral-painting.webp" target="_blank" rel="noopener noreferrer" aria-label="5 / 06">
+          <a class="artwork-image" href="./assets/img/art-floral-painting.webp" target="_blank" rel="noopener noreferrer" >
             <img src="./assets/img/art-floral-painting.webp" alt="" data-i18n-attr="alt:artAltFloral" loading="lazy" decoding="async" width="1000" height="1333">
           </a>
           <figcaption><span>05 / 06</span><span aria-hidden="true">↗</span></figcaption>
@@ -172,11 +206,23 @@
       </div>
     </section>
 
-    <section class="closing" aria-labelledby="closing-title"><div class="section-shell closing-inner reveal"><div class="section-meta"><span>07 /</span><span data-i18n="finalEyebrow">Личная биография</span></div><h2 id="closing-title" data-i18n="finalTitle">Сцена, дисциплина и личный стиль — в одной профессиональной биографии.</h2><div class="closing-actions"><a href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a><a href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer">Best Sound <span>↗</span></a></div></div></section>
+    <section class="closing" aria-labelledby="closing-title"><div class="section-shell closing-inner reveal"><div class="section-meta"><span>07 /</span><span data-i18n="finalEyebrow">Личная биография</span></div><h2 id="closing-title" data-i18n="finalTitle">Сцена, дисциплина и личный стиль — в одной профессиональной биографии.</h2><div class="closing-actions"><a href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener noreferrer"><span data-i18n="contactInstagram">Instagram Юлии</span><span aria-hidden="true">↗</span></a><a href="https://sound-agency.ru/" target="_blank" rel="noopener noreferrer"><span data-i18n="contactAgency">Сайт Best Sound</span><span aria-hidden="true">↗</span></a></div></div></section>
   </main>
 
-  <footer class="site-footer section-shell"><a class="footer-wordmark" href="#top">yulia komarova.</a><span>© 2026 Yulia Komarova</span><a href="#top" aria-label="Back to top">↑</a></footer>
+  <footer class="site-footer section-shell"><a class="footer-wordmark" href="#top">yulia komarova.</a><span>© 2026 Yulia Komarova</span><a href="#top" aria-label="Наверх" data-i18n-attr="aria-label:backToTop">↑</a></footer>
 
   <dialog class="command-dialog" data-command-dialog><form method="dialog"><div class="dialog-top"><strong data-i18n="dialogTitle">Быстрые действия</strong><button type="submit" aria-label="Закрыть" data-i18n-attr="aria-label:closeLabel">×</button></div><a href="#about" data-i18n="navProfile">Биография</a><a href="#signature" data-i18n="navSignature">Подход</a><a href="#agency">Best Sound</a><a href="#artworks" data-i18n="artMenu">Живопись</a><a href="#turnkey" data-i18n="dialogEvent">Организация мероприятия</a><a href="https://www.instagram.com/best.julia/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></form></dialog>
+  <dialog class="art-lightbox" data-art-lightbox aria-label="Галерея работ Юлии" data-i18n-attr="aria-label:artLightboxLabel">
+    <div class="art-lightbox-toolbar">
+      <span data-art-counter aria-live="polite">01 / 05</span>
+      <button class="art-lightbox-close" type="button" data-art-close aria-label="Закрыть просмотр" data-i18n-attr="aria-label:lightboxClose">×</button>
+    </div>
+    <div class="art-lightbox-stage"><img src="" alt="" data-art-lightbox-image></div>
+    <div class="art-lightbox-controls">
+      <button type="button" data-art-prev aria-label="Предыдущая работа" data-i18n-attr="aria-label:lightboxPrev">←</button>
+      <span>YULIA KOMAROVA / ARTWORK</span>
+      <button type="button" data-art-next aria-label="Следующая работа" data-i18n-attr="aria-label:lightboxNext">→</button>
+    </div>
+  </dialog>
 </body>
 </html>
